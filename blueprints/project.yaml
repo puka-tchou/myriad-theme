@@ -1,0 +1,18 @@
+title: Project
+"@extends":
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    header.resume:
+      type: text
+      label: Résumé du projet
+    header.illustration:
+      type: file
+      label: Illustration principale
+      multiple: false
+      destination: "theme://assets/projects"
+      required: true
+      accept:
+        - image/*

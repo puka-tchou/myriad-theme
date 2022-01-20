@@ -1,0 +1,90 @@
+title: Home
+"@extends":
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    header.hero_image:
+      type: file
+      label: Image de fond
+      multiple: false
+      destination: "theme://assets/home"
+      accept:
+        - image/*
+    content:
+      type: section
+      title: Projets
+      underline: true
+    header.projects_title:
+      type: text
+      label: Titre de la section projets
+    header.projects:
+      type: pages
+      classes: fancy
+      label: Projets à afficher
+      start_route: "/projects"
+      show_all: false
+      show_modular: false
+      show_root: false
+      show_slug: true
+      multiple: true
+      validate:
+        type: array
+    header.services_title:
+      type: text
+      label: Titre de la section projets
+    header.services_content:
+      type: editor
+      label: Contenu de la section services
+    header.services_one:
+      type: text
+      label: Titre du premier service
+    header.services_two:
+      type: text
+      label: Titre du deuxième service
+    header.services_three:
+      type: text
+      label: Titre du troisième service
+    header.services_four:
+      type: text
+      label: Titre du quatrième service
+    header.services_image_one:
+      type: file
+      label: Image du premier service
+      destination: "theme://assets/home"
+      accept:
+        - image/*
+    header.services_image_two:
+      type: file
+      label: Image du deuxième service
+      destination: "theme://assets/home"
+      accept:
+        - image/*
+    header.services_image_three:
+      type: file
+      label: Image du troisième service
+      destination: "theme://assets/home"
+      accept:
+        - image/*
+    header.services_image_four:
+      type: file
+      label: Image du quatrième service
+      destination: "theme://assets/home"
+      accept:
+        - image/*
+    header.form_title:
+      type: text
+      label: Titre de la section contact
+    header.form_email:
+      type: text
+      label: Adresse mail
+    header.form_phone:
+      type: text
+      label: Téléphone
+    header.form_image:
+      type: file
+      label: Image de fond de la section contact
+      destination: "theme://assets/home"
+      accept:
+        - image/*

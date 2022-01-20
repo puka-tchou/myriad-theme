@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e }} | {% endif %}Myriad</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('theme://images/apple-touch-icon.png?v=1.0.0')|e }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url('theme://images/favicon-32x32.png?v=1.0.0')|e }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('theme://images/favicon-16x16.png?v=1.0.0')|e }}" />
+    <link rel="manifest" href="{{ url('theme://images/site.webmanifest?v=1.0.0')|e }}" />
+    <link rel="mask-icon" href="{{ url('theme://images/safari-pinned-tab.svg?v=1.0.0" color="#1c5d7c')|e }}" />
+    <link rel="shortcut icon" href="{{ url('theme://images/favicon.ico?v=1.0.0')|e }}" />
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="msapplication-config" content="{{ url('theme://images/browserconfig.xml?v=1.0.0')|e }}">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="canonical" href="{{ page.canonical(true)|e }}" />
+{% endblock head %}
+
+{% block stylesheets %}
+    {% do assets.addCss('https://cdn.jsdelivr.net/combine/npm/purecss@2.0.6,npm/normalize.css@8.0.1', 100) %}
+    {% do assets.addCss('theme://css/custom.css', 98) %}
+{% endblock %}
+
+{% block javascripts %}
+    {% do assets.addJs('theme://js/custom.js', 100) %}
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+</head>
+<body id="top" class="{{ page.header.body_classes|e }} project">
+
+{% block header %}
+    <div class="header">
+        <div class="wrapper padding">
+            <a class="logo left" href="{{ home_url|e }}">
+                <i class="fa fa-rebel"></i>
+                {{ config.site.title|e }}
+            </a>
+            {% block header_navigation %}
+            <nav class="main-nav">
+                {% include 'partials/navigation.html.twig' %}
+            </nav>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block hero %}
+    <section id="hero" class="hero">
+        <h1 class="hero-title">
+            {{ page.header.title|e }}
+        </h1>
+        <img
+            class="hero-image full-size"
+            src="https://ik.imagekit.io/puka{{ media[page.header.illustration|first.path].url|raw }}"
+            alt=""
+        />
+    </section>
+{% endblock %}
+
+
+{% block body %}
+    <section id="body">
+        <div class="wrapper padding">
+        {% block content %}{% endblock %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <div class="footer text-center">
+        <div class="wrapper padding">
+            <p>
+                &copy; 2021 Myriad - written by Puka.
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+</body>
+</html>
