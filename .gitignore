@@ -3,3 +3,6 @@ node_modules/*
 
 # Grav files
 assets/*
+
+# Build tool
+.parcel-cache/*

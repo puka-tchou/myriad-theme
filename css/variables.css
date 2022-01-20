@@ -1,0 +1,29 @@
+:root {
+  --main-color: #1c5d7c;
+  --accent-color: #e89d00;
+  --complimentary-color: #255957;
+  --muted-color: #727272;
+  --text-color: #fff;
+  --black: #000;
+  --white: #eeebd3;
+  --font: "Bahnschrift", arial, sans-serif;
+  --transition: 0.25s ease-in-out;
+  --size-0: clamp(0.88rem, 0.44rem + 2.2vw, 2rem);
+  --size-1: clamp(1.17rem, 0.58rem + 2.93vw, 2.67rem);
+  --size-2: clamp(1.56rem, 0.78rem + 3.9vw, 3.55rem);
+  --size-3: clamp(2.07rem, 1.03rem + 5.2vw, 4.74rem);
+  --size-4: clamp(2.76rem, 1.38rem + 6.93vw, 6.31rem);
+  --size-5: clamp(3.68rem, 1.83rem + 9.24vw, 8.42rem);
+}
+
+@font-face {
+  font-family: "Monserrat";
+  src: url(../fonts/montserrat/MontserratBlack.otf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bahnschrift";
+  src: url(../fonts/bahnschrift/BAHNSCHRIFT.TTF);
+  font-display: swap;
+}
