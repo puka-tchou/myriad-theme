@@ -70,6 +70,8 @@ blockquote {
 /* Utility Classes */
 .wrapper {
   margin: 0 3rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .cta {
