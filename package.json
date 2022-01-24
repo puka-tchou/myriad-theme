@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Theme for the website myriad-prod.fr",
   "scripts": {
-    "build": "parcel build css/theme.css",
+    "build": "esbuild --bundle js/custom.js --bundle css/theme.css --minify --loader:.otf=file --loader:.TTF=file --outdir=dist/",
     "dev": "parcel watch css/theme.css"
   },
   "repository": {
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@parcel/optimizer-css": "^2.2.1",
     "@parcel/transformer-css-experimental": "^2.2.1",
+    "esbuild": "^0.14.13",
     "parcel": "^2.2.1"
   }
 }
