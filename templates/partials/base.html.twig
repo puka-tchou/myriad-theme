@@ -24,11 +24,11 @@
 
 {% block stylesheets %}
     {% do assets.addCss('https://cdn.jsdelivr.net/combine/npm/purecss@2.0.6,npm/normalize.css@8.0.1', 100) %}
-    {% do assets.addCss('theme://dist/theme.css', 98) %}
+    {% do assets.addCss('theme://dist/css/theme.css', 98) %}
 {% endblock %}
 
 {% block javascripts %}
-    {% do assets.addJs('theme://js/custom.js', 100) %}
+    {% do assets.addJs('theme://dist/js/custom.js', 100) %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -61,7 +61,7 @@
         </h1>
         <img
             class="hero-image full-size"
-            src="https://ik.imagekit.io/puka{{ media[page.header.illustration|first.path].url|raw }}"
+            src="{{ media[page.header.illustration|first.path].url|raw }}"
             alt=""
         />
     </section>

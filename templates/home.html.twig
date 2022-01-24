@@ -24,11 +24,11 @@
 
 {% block stylesheets %}
     {% do assets.addCss('https://cdn.jsdelivr.net/combine/npm/purecss@2.0.6,npm/normalize.css@8.0.1', 100) %}
-    {% do assets.addCss('theme://dist/theme.css', 98) %}
+    {% do assets.addCss('theme://dist/css/theme.css', 98) %}
 {% endblock %}
 
 {% block javascripts %}
-    {% do assets.addJs('theme://js/custom.js', 100) %}
+    {% do assets.addJs('theme://dist/js/custom.js', 100) %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -45,7 +45,7 @@
                 </h1>
                 <img
                     class="hero-image"
-                    src="https://ik.imagekit.io/puka{{ media[page.header.hero_image|first.path].url|raw }}"
+                    src="{{ media[page.header.hero_image|first.path].url|raw }}"
                     alt=""
                 />
             </section>
@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                     <img
-                                        src="https://ik.imagekit.io/puka{{ media[project_page.header.illustration|first.path].url|raw }}"
+                                        src="{{ media[project_page.header.illustration|first.path].url|raw }}"
                                         alt=""
                                         class="project-image"
                                         loading="lazy"
@@ -95,7 +95,7 @@
                     <div class="service-item">
                         <h3 class="service-title">{{ header.services_one|e }}</h3>
                         <img
-                            src="https://ik.imagekit.io/puka{{ media[header.services_image_one|first.path].url|raw }}"
+                            src="{{ media[header.services_image_one|first.path].url|raw }}"
                             alt=""
                             class="service-image"
                             loading="lazy"
@@ -104,7 +104,7 @@
                     <div class="service-item">
                         <h3 class="service-title">{{ header.services_two|e }}</h3>
                         <img
-                            src="https://ik.imagekit.io/puka{{ media[header.services_image_two|first.path].url|raw }}"
+                            src="{{ media[header.services_image_two|first.path].url|raw }}"
                             alt=""
                             class="service-image"
                             loading="lazy"
@@ -113,7 +113,7 @@
                     <div class="service-item">
                         <h3 class="service-title">{{ header.services_three|e }}</h3>
                         <img
-                            src="https://ik.imagekit.io/puka{{ media[header.services_image_three|first.path].url|raw }}"
+                            src="{{ media[header.services_image_three|first.path].url|raw }}"
                             alt=""
                             class="service-image"
                             loading="lazy"
@@ -122,7 +122,7 @@
                     <div class="service-item">
                         <h3 class="service-title">{{ header.services_four|e }}</h3>
                         <img
-                            src="https://ik.imagekit.io/puka{{ media[header.services_image_four|first.path].url|raw }}"
+                            src="{{ media[header.services_image_four|first.path].url|raw }}"
                             alt=""
                             class="service-image"
                             loading="lazy"
@@ -143,7 +143,7 @@
                 </div>
                 <img
                     class="contact-image"
-                    src="https://ik.imagekit.io/puka{{ media[header.form_image|first.path].url|raw }}"
+                    src="{{ media[header.form_image|first.path].url|raw }}"
                     alt=""
                 />
             </section>
