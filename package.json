@@ -4,7 +4,7 @@
   "description": "Theme for the website myriad-prod.fr",
   "scripts": {
     "build": "esbuild --bundle js/custom.js --bundle css/theme.css --minify --loader:.otf=file --loader:.TTF=file --outdir=dist/",
-    "dev": "parcel watch css/theme.css"
+    "dev": "esbuild --watch --bundle js/custom.js --bundle css/theme.css --minify --loader:.otf=file --loader:.TTF=file --outdir=dist/"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
     "@parcel/transformer-css-experimental": "^2.2.1",
     "esbuild": "^0.14.13",
     "parcel": "^2.2.1"
+  },
+  "dependencies": {
+    "normalize.css": "8.0.1"
   }
 }
