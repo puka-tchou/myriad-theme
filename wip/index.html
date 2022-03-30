@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png?v=1.0.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png?v=1.0.0" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png?v=1.0.0" />
+    <link rel="manifest" href="./images/site.webmanifest?v=1.0.0" />
+    <link rel="mask-icon" href="./images/safari-pinned-tab.svg?v=1.0.0" color="#1c5d7c" />
+    <link rel="shortcut icon" href="./images/favicon.ico?v=1.0.0" />
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="msapplication-config" content="./images/browserconfig.xml?v=1.0.0">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Myriad - agence 360°, vidéo et photographie</title>
+</head>
+<body>
+    <main class="fullscreen-container">
+        <img src="./background-2.jpg" alt="" role="presentation">
+        <div class="fullscreen">
+            <h1 class="title">Myriad</h1>
+            <h2 class="subtitle">Agence créative spécialisée dans la vidéo 360°, les visites virtuelles et la photographie.</h2>
+            <p class="content">
+                Nous garantissons toujours la meilleure expérience à nos clients et nos utilisateurs, en conséquence ce site
+                se refait une beauté. Nous vous invitons à nous contacter en utilisant les boutons ci-dessous en attendant la mise en
+                ligne de votre nouvelle expérience numérique&nbsp;! Nous restons à votre disposition pour tous vos projets de création
+                vidéo et photo, visite virtuelle ou vidéo 360°.<br>Vous pouvez aussi nous retrouver sur Instagram juste ici :
+                <a class="inline-link" href="https://www.instagram.com/myriad_prod/" target="_blank" rel="noopener noreferrer">@myriad_prod</a>
+            </p>
+            <div class="container">
+                <a class="contact" href="mailto:contact@myriad-prod.fr">Nous contacter par mail</a>
+                <a class="contact" href="tel:+33629557084 ">Nous appeler</a>
+            </div>
+        </div>
+    </main>
+</body>
+<style>
+    /* jaune: #e89d00; */
+    /* bleu: #1c5d7c; */
+    body {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        font-size: 16px;
+    }
+    .fullscreen-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    .fullscreen-container img {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .fullscreen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 960px;
+        margin: auto;
+        padding: 0 3rem;
+        background: rgba(1,1,1,0.8);
+    }
+    .title {
+        text-transform: uppercase;
+        font-size: 3rem;
+    }
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    .content {
+        font-size: 1rem;
+    }
+    .container {
+        margin: 3rem 0;
+    }
+    .contact {
+        color: #fff;
+        background: #1c5d7c;
+        padding: 10px 30px;
+        margin: 0 1rem;
+        border: none;
+        border-radius: 6px;
+        outline: none;
+        text-decoration: none;
+        line-height: 3rem;
+    }
+    .contact:focus {
+        background: #e89d00;
+    }
+    .inline-link {
+        color: #4eb4e6; /* Accessible color */
+    }
+    .inline-link:focus {
+        color: #e89d00;
+    }
+</style>
+<script>
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") {
+            document.querySelectorAll("img").forEach((img) => {
+            img.dataset.oldSrc = img.src;
+            const src = img.src.replace(window.location.origin, "");
+            const renderedWidth = img.scrollWidth;
+            const renderedHeight = img.scrollHeight;
+            img.src = `https://ik.imagekit.io/puka/tr:w-${renderedWidth},h-${renderedHeight}${src}`;
+            img.onerror = () => {
+                img.src = img.dataset.oldSrc;
+                img.dataset.oldSrc = "";
+            };
+            });
+        }
+    });
+</script>
+</html>
