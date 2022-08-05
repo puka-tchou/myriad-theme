@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/puka-tchou/myriad-theme#readme",
   "devDependencies": {
-    "esbuild": "^0.14.43"
+    "esbuild": "^0.14.48"
   },
   "dependencies": {
     "normalize.css": "8.0.1"
