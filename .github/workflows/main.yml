@@ -1,0 +1,22 @@
+name: main
+
+on:
+  push:
+  pull_request:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  # Allow this workflow to be called by another workflow
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: install the dependencies
+        run: npm ci
+      - name: build the website
+        run: npm run build
